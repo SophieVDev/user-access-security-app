@@ -45,7 +45,7 @@ def get_user_by_email(email: str):
         db.close()
 
 
-def require_admin(authorization: str | None):
+def get_current_user(authorization: str | None):
     if not authorization:
         raise HTTPException(
             status_code=401,
@@ -68,13 +68,35 @@ def require_admin(authorization: str | None):
             detail="Token invalide",
         )
 
-    if payload.get("role") != "admin":
+    user_email = payload.get("sub")
+
+    if not user_email:
+        raise HTTPException(
+            status_code=401,
+            detail="Identité utilisateur absente du token",
+        )
+
+    user = get_user_by_email(user_email)
+
+    if user is None:
+        raise HTTPException(
+            status_code=401,
+            detail="Utilisateur introuvable",
+        )
+
+    return user
+
+
+def require_admin(authorization: str | None):
+    user = get_current_user(authorization)
+
+    if user.role != "admin":
         raise HTTPException(
             status_code=403,
             detail="Accès réservé aux administrateurs",
         )
 
-    return payload
+    return user
 
 
 @app.post("/login")
@@ -111,32 +133,12 @@ def login(data: LoginRequest):
 def users_me(
     authorization: str | None = Header(default=None),
 ):
-    if not authorization:
-        raise HTTPException(
-            status_code=401,
-            detail="Token manquant",
-        )
-
-    if not authorization.startswith("Bearer "):
-        raise HTTPException(
-            status_code=401,
-            detail="Format du token invalide",
-        )
-
-    token = authorization.split(" ", 1)[1]
-
-    payload = decode_access_token(token)
-
-    if payload is None:
-        raise HTTPException(
-            status_code=401,
-            detail="Token invalide",
-        )
+    user = get_current_user(authorization)
 
     return {
         "message": "JWT valide",
-        "email": payload.get("sub"),
-        "role": payload.get("role"),
+        "email": user.email,
+        "role": user.role,
     }
 
 
