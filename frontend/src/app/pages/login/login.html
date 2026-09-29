@@ -1,0 +1,39 @@
+<div class="login-container">
+  <h1>Connexion</h1>
+
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="email">Email</label>
+
+      <input
+        id="email"
+        type="email"
+        formControlName="email"
+      />
+    </div>
+
+    <div>
+      <label for="password">Mot de passe</label>
+
+      <input
+        id="password"
+        type="password"
+        formControlName="password"
+      />
+    </div>
+
+    <button type="submit">
+      Se connecter
+    </button>
+  </form>
+
+  @if (message) {
+    <p>{{ message }}</p>
+  }
+
+  @if (currentUser) {
+    <p>
+      Utilisateur connecté : <strong>{{ currentUser }}</strong>
+    </p>
+  }
+</div>

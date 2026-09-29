@@ -1,0 +1,23 @@
+<div class="dashboard">
+  <div class="dashboard-card">
+    <h1>Dashboard</h1>
+
+    <p>Bienvenue,</p>
+
+    <p>
+      <strong>{{ email }}</strong>
+    </p>
+
+    <p>
+      Rôle :
+      <strong>{{ role }}</strong>
+    </p>
+
+    <button
+      type="button"
+      (click)="logout()"
+    >
+      Déconnexion
+    </button>
+  </div>
+</div>

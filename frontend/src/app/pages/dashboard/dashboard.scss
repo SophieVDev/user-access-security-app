@@ -1,0 +1,90 @@
+:host {
+  display: block;
+  width: 100%;
+  min-height: 100vh;
+  background: #f4f7fb;
+}
+
+.dashboard {
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+.dashboard-card {
+  width: 100%;
+  max-width: 500px;
+
+  padding: 50px 40px;
+  box-sizing: border-box;
+
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 20px;
+
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
+
+  text-align: center;
+}
+
+h1 {
+  margin: 0 0 10px;
+
+  color: #111827;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+p {
+  margin: 10px 0;
+
+  color: #6b7280;
+  font-size: 17px;
+}
+
+strong {
+  display: block;
+
+  margin-top: 15px;
+
+  color: #2563eb;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+button {
+  width: 100%;
+
+  margin-top: 35px;
+  padding: 14px 20px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: #dc2626;
+  color: #ffffff;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+button:hover {
+  background: #b91c1c;
+  transform: translateY(-1px);
+}
+
+button:active {
+  transform: translateY(0);
+}
