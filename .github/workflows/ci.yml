@@ -39,3 +39,7 @@ jobs:
       - name: Run Bandit SAST
         run: |
           bandit -r app
+
+      - name: Run pip-audit SCA
+        run: |
+          pip-audit
