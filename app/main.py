@@ -123,7 +123,7 @@ def login(data: LoginRequest):
     return {
         "message": "Connexion réussie",
         "access_token": access_token,
-        "token_type": "bearer",
+        "token_type": "bearer",  # nosec B105
         "email": user.email,
         "role": user.role,
     }
