@@ -761,33 +761,33 @@ http://localhost:4200
 
 ## Implémenté
 
-* [ ] Application Angular
-* [ ] API FastAPI
-* [ ] PostgreSQL
-* [ ] SQLAlchemy
-* [ ] Hachage des mots de passe avec Argon2
-* [ ] Authentification JWT
-* [ ] Expiration des JWT
-* [ ] Auth Guard Angular
-* [ ] HTTP Interceptor
-* [ ] Endpoint `/users/me`
-* [ ] Gestion des rôles
-* [ ] Autorisation administrateur
-* [ ] Vérification du rôle actuel en base
-* [ ] Gestion des réponses HTTP 401/403
-* [ ] Tests automatisés
-* [ ] Git
-* [ ] GitHub
-* [ ] Protection du fichier `.env`
+* [ x] Application Angular
+* [x ] API FastAPI
+* [x ] PostgreSQL
+* [ x] SQLAlchemy
+* [ x] Hachage des mots de passe avec Argon2
+* [ x] Authentification JWT
+* [ x] Expiration des JWT
+* [ x] Auth Guard Angular
+* [ x] HTTP Interceptor
+* [ x] Endpoint `/users/me`
+* [ x] Gestion des rôles
+* [ x] Autorisation administrateur
+* [ x] Vérification du rôle actuel en base
+* [ x] Gestion des réponses HTTP 401/403
+* [x ] Tests automatisés
+* [ x] Git
+* [ x] GitHub
+* [x ] Protection du fichier `.env`
 
 ## CI/CD / DevSecOps à implémenter
 
-* [ ] GitHub Actions
-* [ ] Pipeline de tests automatique
-* [ ] SAST
-* [ ] SCA
-* [ ] Secret scanning
-* [ ] Docker
+* [x ] GitHub Actions
+* [x ] Pipeline de tests automatique
+* [x ] SAST
+* [x ] SCA
+* [ x] Secret scanning
+* [x ] Docker
 * [ ] Scan Docker avec Trivy
 * [ ] Pipeline de build
 * [ ] Pipeline de déploiement
